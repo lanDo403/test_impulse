@@ -6,7 +6,7 @@
 
 1.Схема в draw.io
 
-![image](https://github.com/user-attachments/assets/29d20ccf-c3f8-49bd-a921-a2b626022784)
+![image](https://github.com/user-attachments/assets/7c575de0-514b-4bac-a54f-fbd08f6f6473)
 
 
 2,9,10. HDL задание выполнял в САПРе Vivado под FPGA Nexys-A7-100T, Python код приложен к проекту.
