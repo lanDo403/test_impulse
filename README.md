@@ -2,7 +2,7 @@
 Само задание: https://drive.yadro.com/s/qYrrwGoeA8aMpF6
 ![image](https://github.com/user-attachments/assets/74266a5a-e216-4861-9407-5a0ca43643f9)
 
-2,9,10. HDL задание выполнял в САПРе Vivado под FPGA Nexys-A7-100T, Python код приложен к проекту
+2,9,10. HDL задание выполнял в САПРе Vivado под FPGA Nexys-A7-100T, Python код приложен к проекту.
 Схема RTL анализа:
 ![image](https://github.com/user-attachments/assets/67642475-4512-460d-bbba-0fef027b37db)
 
