@@ -2,6 +2,8 @@
 Само задание: https://drive.yadro.com/s/qYrrwGoeA8aMpF6
 ![image](https://github.com/user-attachments/assets/74266a5a-e216-4861-9407-5a0ca43643f9)
 
+Все файлы есть в репозитории.
+
 1.Схема в draw.io
 ![image](https://github.com/user-attachments/assets/b0fe8c80-27b1-4759-87eb-d5049df955cf)
 
