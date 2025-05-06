@@ -13,15 +13,15 @@ module top
   output logic signed [size-1:0]   q
 );
 
-  //Буферизация входов по сигналу валидности
+  //Р‘СѓС„РµСЂРёР·Р°С†РёСЏ РІС…РѕРґРѕРІ РїРѕ СЃРёРіРЅР°Р»Сѓ РІР°Р»РёРґРЅРѕСЃС‚Рё
   logic signed [size-1:0] a_valid, b_valid, c_valid, d_valid;
 
-  //Промежуточные результаты
+  //РџСЂРѕРјРµР¶СѓС‚РѕС‡РЅС‹Рµ СЂРµР·СѓР»СЊС‚Р°С‚С‹
   logic signed [2*size-1:0] stage1_result;
   logic signed [2*size-1:0] stage2_result;
   logic signed [2*size-1:0] q_reg;
 
-  //Валидность по стадиям
+  //Р’Р°Р»РёРґРЅРѕСЃС‚СЊ РїРѕ СЃС‚Р°РґРёСЏРј
   logic valid_in, valid_stage1, valid_stage2;
 
   always_ff @(posedge clk or posedge reset) begin
@@ -52,7 +52,7 @@ module top
     end
   end
 
-  //Стадия 1: (a - b) * (1 + 3c)
+  //РЎС‚Р°РґРёСЏ 1: (a - b) * (1 + 3c)
   always_ff @(posedge clk or posedge reset) begin
     if (reset)
       stage1_result <= 0;
@@ -60,7 +60,7 @@ module top
       stage1_result <= (a_valid - b_valid) * (1 + 3 * c_valid);
   end
 
-  //Стадия 2: stage1 - 4d
+  //РЎС‚Р°РґРёСЏ 2: stage1 - 4d
   always_ff @(posedge clk or posedge reset) begin
     if (reset)
       stage2_result <= 0;
@@ -68,7 +68,7 @@ module top
       stage2_result <= stage1_result - (4 * d_valid);
   end
 
-  //Стадия 3: Делим результат на 2
+  //РЎС‚Р°РґРёСЏ 3: Р”РµР»РёРј СЂРµР·СѓР»СЊС‚Р°С‚ РЅР° 2
   always_ff @(posedge clk or posedge reset) begin
     if (reset)
       q_reg <= 0;
@@ -76,6 +76,6 @@ module top
       q_reg <= stage2_result >>> 1;
   end
 
-  assign q = q_reg[size-1:0];  //отбрасываем лишние биты, при необходимости
+  assign q = q_reg[size-1:0];
 
 endmodule
